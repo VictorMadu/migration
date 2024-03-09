@@ -1,0 +1,17 @@
+spring:
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+            ddl-auto: create
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    datasource:
+        url: jdbc:postgresql://localhost:6433/migration
+        username: postgres
+        password: postgres
+
+    liquibase:
+        change-log: classpath:db/changelog/db.changelog-master.xml
